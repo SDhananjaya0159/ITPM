@@ -165,7 +165,7 @@ test.describe('Singlish to Sinhala Positive Functional Scenarios 0001-0024', () 
     test('Pos_Fun_0023 - Compound sentence with "saha"', async ({ page }) => {
         const input = page.locator('textarea');
         const output = page.locator('div.whitespace-pre-wrap.overflow-y-auto.flex-grow.bg-slate-50');
-        await input.pressSequentially('light eka nivanna saha dora vahan yanna.', { delay: 30 });
+        await input.pressSequentially('light eka nivanna saha dhora vahan yanna.', { delay: 30 });
         await expect(output).toContainText('light එක නිවන්න සහ දොර වහන් යන්න.');
     });
 
@@ -173,7 +173,7 @@ test.describe('Singlish to Sinhala Positive Functional Scenarios 0001-0024', () 
         const input = page.locator('textarea');
         const output = page.locator('div.whitespace-pre-wrap.overflow-y-auto.flex-grow.bg-slate-50');
         
-        const longText = "api labana sathiye nuvara eLiya yanna loku plaeen ekak hadhaagena thiyennee. mama magee baeeg eka paek karalaa okkoma salli hoyagena redi velaa innee. iita passee nuvara gihin apita hoDHA hotel ekak hoyaaganna puluvan veyi needha kiyalaa mama hithanavaa. nuvara eLiya hena siithala nisaa loku jaekat ekakuth oonee venavaa kiyalaa ammi kiwaa. api trip eka gihin hoDHA fotoos tika aran aapahu gedhara enavaa. oyaalath trip ekata enavaanam mata vahaama kiyanna naethnam apita yanna amaaru veyi.";
+        const longText = "api labana sathiyee nuvara eLiya yanna loku plaeen ekak hadhaagena thiyennee. mama magee baeeg eka paek karalaa okkoma salli hoyaagena redi velaa innee. iita passee nuvara gihin apita hoDHA hotel ekak hoyaaganna puLuvan veyi needha kiyalaa mama hithanavaa. nuvara eLiya hena siithala nisaa loku jaekat ekakuth oonee venavaa kiyalaa ammi kivvaa. api trip eka gihin hoDHA fotoos tika aran aapahu gedhara enavaa. oyaalath trip ekata enavaanam mata vahaama kiyanna naethnam apita yanna amaaru veyi.";
         const expected = "අපි ලබන සතියේ නුවර එළිය යන්න ලොකු ප්ලෑන් එකක් හදාගෙන තියෙන්නේ. මම මගේ බෑග් එක පැක් කරලා ඔක්කොම සල්ලි හොයාගෙන රෙඩි වෙලා ඉන්නේ. ඊට පස්සේ නුවර ගිහින් අපිට හොඳ හොටෙල් එකක් හොයාගන්න පුළුවන් වෙයි නේද කියලා මම හිතනවා. නුවර එළිය හෙන සීතල නිසා ලොකු ජැකට් එකකුත් ඕනේ වෙනවා කියලා අම්මි කිව්වා. අපි ට්‍රිප් එක ගිහින් හොඳ ෆොටෝස් ටික අරන් ආපහු ගෙදර එනවා. ඔයාලත් ට්‍රිප් එකට එනවානම් මට වහාම කියන්න නැත්නම් අපිට යන්න අමාරු වෙයි.";
         
         await input.pressSequentially(longText, { delay: 10 });
